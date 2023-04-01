@@ -5,3 +5,28 @@ Design a class to represent a bank account. Include the following members.
 Data members: Name of depositor, Account number, Type of account, Balance, amount in the account.
 
 Methods: To assign initial values, To deposit an amount, To withdraw an amount after checking balance, To display the name and balance
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;import java.util.Random; 
+class Bank
+{
+public String nameOfDepositor;
+public int accNumber;
+public String accType;
+public double balanceAmount;
+public void assignValues(String nameOfDepositor, String accType, double balanceAmount)
+{
+this.nameOfDepositor=nameOfDepositor;
+this.accType=accType;
+this.balanceAmount=balanceAmount;
+Random random = new Random();
+this.accNumber=random.nextInt(1000000);
+System.out.println("Your new account number is: "+accNumber);
+}
+public void depositAmount(double amount)
+{
+if(accNumber==0)
+System.out.println("!You don't have bank account to deposit\nNote:please assign values to create an account");
+else
+{
+balanceAmount+=amount;
